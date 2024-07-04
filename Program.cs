@@ -1,5 +1,5 @@
 ﻿
-using Drinks_info_app;
+using drinks_info;
 
-Userinput userinput = new Userinput();
+UserInput userinput = new UserInput();
 userinput.GetCategoriesInput();

@@ -2,26 +2,25 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Drinks_info_app
+namespace drinks_info
 {
     public class TableVisualisationEngine
     {
-        public static void ShowTable<T>(List<T> tabledata, [AllowNull] string tablename) where T : class
+        public static void ShowTable<T>(List<T> tableData, [AllowNull] string tableName) where T : class
         {
             Console.Clear();
-            if (tablename == null)
-                tablename = "";
+
+            if (tableName == null)
+                tableName = "";
 
             Console.WriteLine("\n\n");
 
             ConsoleTableBuilder
-                .From(tabledata)
-                .WithColumn(tablename)
-                .ExportAndWriteLine();
+                .From(tableData)
+                .WithColumn(tableName)
+                .WithFormat(ConsoleTableBuilderFormat.Alternative)
+                .ExportAndWriteLine(TableAligntment.Center);
             Console.WriteLine("\n\n");
         }
     }
